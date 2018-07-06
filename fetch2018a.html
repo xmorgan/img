@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+    async function f1() {
+      let canvas = document.createElement('canvas');
+      let ctx = canvas.getContext("2d");
+      document.body.append(canvas);
+      
+      let response = await fetch('https://xmorgan.github.io/img/haaaave-you-met-simons-cat.png');
+      let blob = await response.blob();
+      let bitmap = await createImageBitmap(blob);
+      await ctx.drawImage(bitmap,0,0);
+      let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    
+      return imageData.data;;
+    }
+    
+    f1();
+  </script>
+</body>
+
+</html>
