@@ -13,12 +13,12 @@
       let blob = await response.blob();
       let bitmap = await createImageBitmap(blob);
       await ctx.drawImage(bitmap,0,0);
-      let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      let imageData = ctx.getImageData(0, 0, bitmap.width, bitmap.height);
     
       return imageData.data;;
     }
     
-    f1();
+    let data = f1();
   </script>
 </body>
 
