@@ -9,10 +9,14 @@ var url = "http://www.matthewflickinger.com/lab/whatsinagif/images/sample_1.gif"
 var request = new Request(url, {"credentials":"omit","headers":{},"referrerPolicy":"no-referrer-when-downgrade",
                                 "body":null,"method":"GET","mode":"cors"});
 */
-var url = 'sample_1.gif';
+var url = 'haaaave-you-met-simons-cat.png';
 var request = new Request(url, {"credentials":"omit","headers":{},"referrerPolicy":"no-referrer-when-downgrade",
                                 "body":null,"method":"GET","mode":"no-cors"});
 var pResponse = fetch(request);
+var pBlob = pResponse.then(response => response.blob());
+var pImageBitmap = pBlob.then(blob => createImageBitmap(blob));
+      
+      
 </script>
-  </body>
+</body>
 </html>
